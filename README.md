@@ -54,7 +54,7 @@ See [examples](https://github.com/TimoKunze/node-printer/tree/main/examples)
 
 ### Contibutors:
 
-* Timo Kunze
+* Timo Kunze, @timokunze
 * Thiago Lugli, @thiagoelg
 * Eko Eryanto, @ekoeryanto
 
