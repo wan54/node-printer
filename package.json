@@ -1,30 +1,31 @@
 {
-  "name": "@thiagoelg/node-printer",
+  "name": "@timokunze/node-printer",
   "description": "Node.js printer bindings",
-  "version": "0.6.2",
-  "homepage": "https://github.com/thiagoelg/node-printer",
+  "version": "0.6.3",
+  "homepage": "https://github.com/TimoKunze/node-printer",
   "author": {
     "name": "Ion Lupascu",
     "url": "http://program-support.co.uk/",
     "email": "ionlupascu@gmail.com"
   },
   "contributors": [
+    "Timo Kunze <tkunze@compeso.com",
     "Thiago Lugli <thiagoelg@gmail.com>",
     "Eko Eryanto <ekoeryanto@gmail.com>"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/thiagoelg/node-printer.git"
+    "url": "git://github.com/TimoKunze/node-printer.git"
   },
   "devDependencies": {
-    "nodeunit": "*",
-    "prebuild": "^11.0.3",
-    "prebuild-ci": "^4.0.0",
-    "node-abi": "^3.8.0",
-    "patch-package": "^6.4.7"
+    "nodeunit": "^0.11.3",
+    "node-gyp": "^10.1.0",
+    "prebuild": "^13.0.0",
+    "node-abi": "^3.62.0",
+    "patch-package": "^8.0.0"
   },
   "engines": {
-    "node": ">= 4.0.0"
+    "node": ">= 18.0.0"
   },
   "scripts": {
     "install": "prebuild-install || node-gyp rebuild",
@@ -37,7 +38,7 @@
   "binary": {
     "module_name": "node_printer",
     "module_path": "./lib/",
-    "host": "https://github.com/thiagoelg/node-printer/releases/download/",
+    "host": "https://github.com/TimoKunze/node-printer/releases/download/",
     "remote_path": "v{version}"
   },
   "licenses": [
@@ -47,8 +48,8 @@
   ],
   "main": "./lib/printer",
   "dependencies": {
-    "nan": "^2.15.0",
-    "prebuild-install": "^7.0.1"
+    "nan": "^2.19.0",
+    "prebuild-install": "^7.1.2"
   },
   "types": "types/index.d.ts"
 }
