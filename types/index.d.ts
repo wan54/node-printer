@@ -55,3 +55,5 @@ export interface JobDetails {
 }
 
 export type JobStatus = 'PAUSED' | 'PRINTING' | 'PRINTED' | 'CANCELLED' | 'PENDING' | 'ABORTED';
+
+declare module '@timokunze/node-printer';
