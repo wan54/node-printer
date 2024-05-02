@@ -2,7 +2,7 @@ Node Printer Prebuild
 ============
 Native bind printers on POSIX and Windows OS from Node.js, electron and node-webkit.
 
-[![npm version](https://badge.fury.io/js/@timokunze%2Fnode-printer.svg)](https://badge.fury.io/js/@timokunze%2Fnode-printer) [![Prebuild Binaries and Publish](https://github.com/TimoKunze/node-printer/actions/workflows/prebuild-main.yml/badge.svg)](https://github.com/TimoKunze/node-printer/actions/workflows/prebuild-main.yml)
+[![npm version](https://badge.fury.io/js/@timokunze%2Fnode-printer.svg)](https://www.npmjs.com/package/@timokunze/node-printer) [![Prebuild Binaries and Publish](https://github.com/TimoKunze/node-printer/actions/workflows/prebuild-main.yml/badge.svg)](https://github.com/TimoKunze/node-printer/actions/workflows/prebuild-main.yml)
 
 > Me (TimoKunze) created this fork to upgrade dependencies since I ran into various issues with current versions of Node and Electron.
 
