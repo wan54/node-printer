@@ -7,7 +7,7 @@ on:
 
 jobs:
   prebuild-linux:
-    name: Prebuild Binaries for Linux
+    name: Prebuild Binaries for Linux x64
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -25,7 +25,7 @@ jobs:
           npm run apply-patches
           npm run prebuild -- --strip --all --arch x64 -u ${{ secrets.PREBUILD_TOKEN }}
   prebuild-linux-32:
-    name: Prebuild Binaries for Linux
+    name: Prebuild Binaries for Linux ia32
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
