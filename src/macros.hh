@@ -12,11 +12,6 @@
 #  define MY_NODE_MODULE_HANDLESCOPE MY_NODE_MODULE_ISOLATE_DECL Nan::HandleScope scope
 #  define V8_VALUE_NEW(type, value)   v8::type::New(MY_NODE_MODULE_ISOLATE, value)
 #  define V8_VALUE_NEW_DEFAULT(type)   v8::type::New(MY_NODE_MODULE_ISOLATE)
-#  if NODE_MODULE_VERSION > 73
-#   define V8_STRING_NEW_2BYTES(value)   v8::String::NewFromTwoByte(MY_NODE_MODULE_ISOLATE, value).ToLocalChecked()
-#  else
-#    define V8_STRING_NEW_2BYTES(value)   v8::String::NewFromTwoByte(MY_NODE_MODULE_ISOLATE, value)
-#  endif
 
 #  define RETURN_EXCEPTION(msg)  isolate->ThrowException(Nan::Error(msg));    \
     return
@@ -43,11 +38,14 @@
 
 #if NODE_VERSION_AT_LEAST(4, 3, 0)
 #  define V8_STRING_NEW_UTF8(value)   v8::String::NewFromUtf8(MY_NODE_MODULE_ISOLATE, value, v8::NewStringType::kNormal).ToLocalChecked()
+#  define V8_STRING_NEW_2BYTES(value)   v8::String::NewFromTwoByte(MY_NODE_MODULE_ISOLATE, value, v8::NewStringType::kNormal).ToLocalChecked()
 #elif NODE_VERSION_AT_LEAST(0, 11, 10)
 #  if NODE_MODULE_VERSION > 73
 #    define V8_STRING_NEW_UTF8(value)   v8::String::NewFromUtf8(MY_NODE_MODULE_ISOLATE, value).ToLocalChecked()
+#    define V8_STRING_NEW_2BYTES(value)   v8::String::NewFromTwoByte(MY_NODE_MODULE_ISOLATE, value).ToLocalChecked()
 #  else
 #    define V8_STRING_NEW_UTF8(value)   v8::String::NewFromUtf8(MY_NODE_MODULE_ISOLATE, value)
+#    define V8_STRING_NEW_2BYTES(value)   v8::String::NewFromTwoByte(MY_NODE_MODULE_ISOLATE, value)
 #  endif
 #endif
 
