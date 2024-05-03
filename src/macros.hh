@@ -13,10 +13,8 @@
 #  define V8_VALUE_NEW(type, value)   v8::type::New(MY_NODE_MODULE_ISOLATE, value)
 #  define V8_VALUE_NEW_DEFAULT(type)   v8::type::New(MY_NODE_MODULE_ISOLATE)
 #  if NODE_MODULE_VERSION > 73
-#   define V8_STRING_NEW_UTF8(value)   v8::String::NewFromUtf8(MY_NODE_MODULE_ISOLATE, value).ToLocalChecked()
 #   define V8_STRING_NEW_2BYTES(value)   v8::String::NewFromTwoByte(MY_NODE_MODULE_ISOLATE, value).ToLocalChecked()
 #  else
-#    define V8_STRING_NEW_UTF8(value)   v8::String::NewFromUtf8(MY_NODE_MODULE_ISOLATE, value)
 #    define V8_STRING_NEW_2BYTES(value)   v8::String::NewFromTwoByte(MY_NODE_MODULE_ISOLATE, value)
 #  endif
 
@@ -41,6 +39,16 @@
 #  define RETURN_EXCEPTION_STR(msg) RETURN_EXCEPTION(V8_STRING_NEW_UTF8(msg))
 #  define MY_NODE_MODULE_RETURN_VALUE(value)   return scope.Close(value)
 #  define MY_NODE_MODULE_RETURN_UNDEFINED()   return scope.Close(v8::Undefined())
+#endif
+
+#if NODE_VERSION_AT_LEAST(4, 3, 0)
+#  define V8_STRING_NEW_UTF8(value)   v8::String::NewFromUtf8(MY_NODE_MODULE_ISOLATE, value, v8::NewStringType::kNormal).ToLocalChecked()
+#elif NODE_VERSION_AT_LEAST(0, 11, 10)
+#  if NODE_MODULE_VERSION > 73
+#    define V8_STRING_NEW_UTF8(value)   v8::String::NewFromUtf8(MY_NODE_MODULE_ISOLATE, value).ToLocalChecked()
+#  else
+#    define V8_STRING_NEW_UTF8(value)   v8::String::NewFromUtf8(MY_NODE_MODULE_ISOLATE, value)
+#  endif
 #endif
 
 #if NODE_VERSION_AT_LEAST(4, 0, 0)
