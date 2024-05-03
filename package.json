@@ -18,7 +18,6 @@
     "url": "git://github.com/TimoKunze/node-printer.git"
   },
   "devDependencies": {
-    "nodeunit": "^0.11.3",
     "node-gyp": "^10.1.0",
     "prebuild": "^13.0.0",
     "node-abi": "^3.62.0",
@@ -32,8 +31,7 @@
     "apply-patches": "patch-package",
     "prebuild-all": "prebuild --all --force --strip --verbose --openssl_fips=X",
     "prebuild": "prebuild",
-    "rebuild": "node-gyp rebuild",
-    "test": "nodeunit test"
+    "rebuild": "node-gyp rebuild"
   },
   "binary": {
     "module_name": "node_printer",
