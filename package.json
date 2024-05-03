@@ -1,7 +1,7 @@
 {
   "name": "@timokunze/node-printer",
   "description": "Node.js printer bindings",
-  "version": "0.6.5",
+  "version": "0.6.6",
   "homepage": "https://github.com/TimoKunze/node-printer",
   "author": {
     "name": "Ion Lupascu",
@@ -20,15 +20,13 @@
   "devDependencies": {
     "node-gyp": "^10.1.0",
     "prebuild": "^13.0.0",
-    "node-abi": "^3.62.0",
-    "patch-package": "^8.0.0"
+    "node-abi": "^3.62.0"
   },
   "engines": {
-    "node": ">= 18.0.0"
+    "node": ">= 16.0.0"
   },
   "scripts": {
     "install": "prebuild-install || node-gyp rebuild",
-    "apply-patches": "patch-package",
     "prebuild-all": "prebuild --all --force --strip --verbose --openssl_fips=X",
     "prebuild": "prebuild",
     "rebuild": "node-gyp rebuild"
