@@ -1,0 +1,13 @@
+diff --git a/node_modules/node-abi/abi_registry.json b/node_modules/node-abi/abi_registry.json
+index 14b44af..afd561e 100644
+--- a/node_modules/node-abi/abi_registry.json	
++++ b/node_modules/node-abi/abi_registry.json
+@@ -337,7 +337,7 @@
+     "future": false,
+     "lts": false,
+     "runtime": "electron",
+-    "target": "32.0.0-alpha.1"
++    "target": "32.0.0"
+   },
+   {
+     "abi": "130",
