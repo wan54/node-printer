@@ -15,11 +15,6 @@ jobs:
         arch: [x64]
     timeout-minutes: 30
     steps:
-      - if: ${{ matrix.os == 'ubuntu-latest' }}
-        name: Setup Dependencies
-        run: |
-          sudo apt-get update -y -qq
-          sudo apt-get install -y g++-multilib gcc-multilib libcups2-dev linux-libc-dev
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
