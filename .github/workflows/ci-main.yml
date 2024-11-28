@@ -11,7 +11,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest, macos-latest, ubuntu-latest]
+        os: [windows-latest]
         arch: [x64]
     timeout-minutes: 30
     steps:
@@ -28,4 +28,4 @@ jobs:
       - name: Prebuild
         run: |
           npm run apply-patches
-          npm run prebuild -- --strip --all --arch ${{ matrix.arch }} -u ${{ secrets.PREBUILD_TOKEN }}
+          npm run prebuild -- --strip --arch ${{ matrix.arch }} -r electron -t 33.2.0
